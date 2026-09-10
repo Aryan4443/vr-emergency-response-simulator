@@ -1,0 +1,25 @@
+{
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/*.meta": true,
+    "Library/": true,
+    "Temp/": true,
+    "Logs/": true,
+    "obj/": true,
+    "Build/": true,
+    "UserSettings/": true
+  },
+  "files.watcherExclude": {
+    "**/Library/**": true,
+    "**/Temp/**": true,
+    "**/Logs/**": true,
+    "**/obj/**": true,
+    "**/Build/**": true
+  },
+  "dotnet.defaultSolution": "disable",
+  "omnisharp.useModernNet": true,
+  "editor.formatOnSave": true,
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  }
+}
