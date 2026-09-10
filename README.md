@@ -15,7 +15,17 @@ Two scenarios are playable:
 **Status: in development.** Both scenarios are complete and playable on the
 desktop simulator. Neither has been run on a headset.
 
-![The hallway](Docs/Screenshots/fire-03-hallway.png)
+## Demo
+
+![Fire evacuation drill](Docs/demo-preview.gif)
+
+Raising the alarm, walking into the smoke, and taking the safe exit. The full
+**[56-second demo video](Docs/demo.mp4)** runs the drill from briefing to results.
+
+The recording is the real scenario, not a scripted flythrough: the start button is
+pressed, the map and alarm are used, the smoke is entered and left, and the exit is
+taken. The objectives, timer and score on screen are the ones the running scenario
+produced.
 
 ## Motivation
 

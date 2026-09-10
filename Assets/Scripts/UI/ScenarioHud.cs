@@ -120,7 +120,11 @@ namespace VRSim.UI
             foreach (var objective in tracker.Objectives)
             {
                 var isCurrent = ReferenceEquals(objective, tracker.Current);
-                var mark = objective.IsComplete ? "✓" : isCurrent ? "▶" : "○";
+
+                // Plain ASCII on purpose. The bundled LiberationSans has no tick, arrow or warning
+                // glyph, and a missing glyph renders as an empty box, which reads as a broken build
+                // rather than as a checklist.
+                var mark = objective.IsComplete ? "[x]" : isCurrent ? " > " : "[ ]";
                 var line = objective.IsComplete
                     ? $"<s>{objective.Title}</s>"
                     : isCurrent ? $"<b>{objective.Title}</b>" : objective.Title;
@@ -272,12 +276,14 @@ namespace VRSim.UI
             {
                 // The glyph and the wording carry the warning, so the message still reads
                 // correctly for a user who cannot distinguish the colour.
+                // Wording carries the meaning; the prefix is a second, non-colour cue that the
+                // bundled font can actually draw.
                 m_PromptText.text = next switch
                 {
                     ScenarioState.Active => "Find a safe exit.",
-                    ScenarioState.Warning => "⚠ Unsafe area — leave the smoke.",
-                    ScenarioState.Completed => "✓ You reached a safe exit.",
-                    ScenarioState.Failed => "✕ The evacuation failed.",
+                    ScenarioState.Warning => "WARNING - unsafe area. Leave the smoke.",
+                    ScenarioState.Completed => "SAFE - you reached a safe exit.",
+                    ScenarioState.Failed => "FAILED - the evacuation failed.",
                     _ => string.Empty,
                 };
             }

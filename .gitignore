@@ -71,3 +71,6 @@ Icon
 
 # Unity batch-mode temp
 .utmp/
+
+# Unity duplicate settings files ("Foo 2.asset") left behind by repeated batch runs
+ProjectSettings/* [0-9].asset
